@@ -3,4 +3,8 @@ project(MIPGenerator)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(MIPGenerator main.cpp)
+find_package(TIFF REQUIRED)
+
+add_executable(${PROJECT_NAME} main.cpp)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE TIFF::TIFF)
